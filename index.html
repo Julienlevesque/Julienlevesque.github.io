@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="language" content="english"> 
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+
+<title>boxes putaclics</title>
+
+<style type="text/css">
+html,body {
+    height:100%;
+    margin:0;
+    overflow:hidden;
+    background-color:#ccc;
+ }
+#randomBox1,#randomBox2,#randomBox3,
+#randomBox4,#randomBox5,#randomBox6 {
+    width:322px;
+    height:198px;
+    border:1px solid #000;
+    background-color:#f00;
+    border-radius:15px;
+    box-shadow:#000 10px 10px 30px;
+ }
+#randomBox2 {background-color:#0f0;}
+#randomBox3 {background-color:#00f;}
+#randomBox4 {
+    line-height:198px;
+    background-color:#f0f;
+    margin:20px auto;
+    text-align:center;
+ }
+#randomBox5{background-color:#ff0;}
+#randomBox6{background-color:#0ff;}
+.pstn {
+    position:absolute;
+ }
+.non-mover{
+    position:relative;
+ }
+</style>
+
+<script type="text/javascript">
+var speed=1000;
+   var l=[];
+   var t=[];
+   var obj,w,h,c;  
+   var objs=document.getElementsByTagName('div');
+   var bit=30;
+function init(){
+   obj=document.getElementsByTagName('html')[0]; 
+   w=obj.offsetWidth;
+   h=obj.offsetHeight;
+for(c=0;c<objs.length;c++){
+if(objs[c].className=='non-mover'){
+   objs[c].style.zIndex=Math.floor(Math.random()*w)/2;}
+if(objs[c].className!='non-mover'){
+   l[c]=Math.floor(Math.random()*w);
+   t[c]=Math.floor(Math.random()*h);
+   objs[c].style.zIndex=Math.floor(Math.random()*w);
+if(l[c]>=w-objs[c].offsetWidth){
+   l[c]=w-objs[c].offsetWidth-bit;
+ }
+if(l[c]<=0){
+   l[c]=0+bit;
+ }
+if(t[c]>=h-objs[c].offsetHeight){
+   t[c]=h-objs[c].offsetHeight-bit;
+ }
+if(t[c]<=0){
+   t[c]=0+bit;
+ }
+   objs[c].style.left=l[c]+'px';
+   objs[c].style.top=t[c]+'px';
+   objs[c].className='pstn';
+   }
+  }
+setTimeout(function(){init()},speed); 
+ }
+
+ window.addEventListener?
+ window.addEventListener('load',init,false):
+ window.attachEvent('onload',init);
+
+</script>
+
+</head>
+<body>
+
+<div id="randomBox1">lol</div>
+<div id="randomBox2">tk78 </div>
+<div id="randomBox3">tchoukill </div>
+<div id="randomBox4">level </div>
+<div id="randomBox5">fortnite </div>
+<div id="randomBox6">https://youtu.be/XoDY9vFAaG8 </div>
+
+
+
+
+
+
+<div id="randomBox4" class="non-mover">   hendeks</div>
+
+
+</body>
+</html>
